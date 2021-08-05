@@ -73,25 +73,45 @@ export class AppComponent {
 
     const { phone: ci } = per3;
     console.log('name=', ci);
+
+    //{1:'a',2:'a',3:'a',4:'a',5:'a',6:'a'} convertir a un array y sumar los numeros pares
+
+    const Ej1 = { 1: 'a', 2: 'a', 3: 'a', 4: 'a', 5: 'a', 6: 'a' };
+    const b = Object.keys(Ej1)
+      .map(m => parseInt(m))
+      .reduce((acc, value) => {
+        if (value % 2 === 0) {
+          acc = acc + value;
+        }
+        return acc;
+      }, 0);
+    console.log('aaa', b);
+
+    //[1,2,3,4,5,6] filtrar los numeros impares y mostrarlos como cadena
+
+    console.log(
+      '222= ',
+      [1, 2, 3, 4, 5, 6].filter(item => item % 2 !== 0).join('-')
+    );
   }
-
-  //funciones normales y funciones flecha
-  //getName (name:string):string{
-  //  ....
-  //  ....
-  //  return "hola" + name;
-
-  //}
-
-  //name:string)-> {
-  //  ....
-  //  ....
-  //  return "hola" | name;
-  //}
-
-  //getName():string{
-  //  return "hola"
-  //}
-
-  //const test=()->"hola"
 }
+
+//funciones normales y funciones flecha
+//getName (name:string):string{
+//  ....
+//  ....
+//  return "hola" + name;
+
+//}
+
+//name:string)-> {
+//  ....
+//  ....
+//  return "hola" | name;
+//}
+
+//getName():string{
+//  return "hola"
+//}
+
+//const test=()->"hola"
