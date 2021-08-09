@@ -1,5 +1,7 @@
 <p> App component</p>
 
-<app-test1 status="busy"></app-test1>
+<p>{{myvar}}</p>
+
+<app-test1 status="myStatus" (onSendData)="printDataTset1($event)"></app-test1>
 
 <app-test2></app-test2>
