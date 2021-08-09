@@ -11,7 +11,11 @@ export class AppComponent {
 
   constructor() {}
 
-  printDataRicardoComp(event: any) {
+printData1(event: any) {
     console.log('Test1Component:', event);
   }
+
+printData2(event){
+  console.log('CHILD COMP SEND DATA: ', event);
+}
 }
