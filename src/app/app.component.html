@@ -2,6 +2,7 @@
 
 <p>{{myvar}}</p>
 
-<app-test1 status="myStatus" (onSendData)="printDataTset1($event)"></app-test1>
+<app-test1 [status]="myStatus" 
+(onSendData)="printDataTest1($event)">></app-test1>
 
 <app-test2></app-test2>
