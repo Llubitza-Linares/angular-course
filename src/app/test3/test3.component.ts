@@ -1,22 +1,13 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, Input, OnChanges, OnDestroy, OnInit  } from '@angular/core';
 
 @Component({
   selector: 'app-test3',
   templateUrl: './test3.component.html',
   styleUrls: ['./test3.component.css']
 })
-export class Test3Component implements OnInit {
+export class Test3Component implements OnInit, OnChanges, DoCheck, OnDestroy, AfterViewInit, AfterViewChecked, AfterContentInit, AfterContentChecked  {
 
-  
-  @Input() test = 'aaa';
-  @Input() names;
-
-  name = "Name";
-  lastname = "Last Name";
-
-  printName(){
-    console.log("Name: "+this.name+" "+this.lastname)
-  }
+  @Input() name;
 
   constructor() {
     console.log('CONTRUCTOR');
@@ -56,5 +47,6 @@ export class Test3Component implements OnInit {
   ngOnDestroy(){
     console.log('ON DESTROY');
   }
+
 
 }

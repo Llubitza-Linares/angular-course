@@ -9,13 +9,18 @@ export class AppComponent {
   title = 'angular2021';
   myStatus = 'my status';
 
-  constructor() {}
+  sw = true;
 
-printData1(event: any) {
-    console.log('Test1Component:', event);
+  constructor(){
   }
 
-printData2(event){
+printDataRicardoComp(event:any){
+  console.log('RICARDO COMP:', event);
+}
+
+
+printData(event){
   console.log('CHILD COMP SEND DATA: ', event);
 }
+  
 }
