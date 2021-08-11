@@ -40,3 +40,39 @@
   <li *ngSwitchCase="'green'">green</li>
   <li *ngSwitchDefault>Default Orange</li>
 </ul>
+
+
+
+<button (click)="sw = !sw">SHOW TEST3</button>
+<div *ngIf="sw">
+  <app-test3 [name]="myStatus">
+  </app-test3>
+</div>
+
+<div #myDiv1>
+  <p>MI DIV 1</p>
+</div>
+
+<ng-template>
+  <p>It is my template</p>
+</ng-template>
+
+<ng-template #myVarElse>
+  <p>It is my template</p>
+  <p>It is my template</p>
+  <p>It is my template</p>
+  <p>It is my template</p>
+</ng-template>
+
+<app-test2 name="juan" lastName="gutierres" (onSendData)="printData($event)">
+
+<p>Mi propio contenido</p>
+<p>Mi propio contenido</p>
+<button>mi boton</button>
+
+</app-test2>
+
+<button (click)="sw = !sw">SHOW TEST3</button>
+<ng-container *ngIf="sw" style="margin: 30px">
+  <p>NG CONTAINER</p>
+</ng-container>
