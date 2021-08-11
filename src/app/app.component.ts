@@ -11,6 +11,8 @@ export class AppComponent {
 
   sw = true;
 
+  color:string;
+
   constructor(){
   }
 
