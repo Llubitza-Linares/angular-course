@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {of} from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import {BehaviorSubject, of, Subscription} from 'rxjs';
+import { delay, filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -14,34 +14,37 @@ export class AppComponent {
   sw = true;
 
   color:string;
-
-  tiktok = of([1,2,3,4,5,6]);
+  personASub:Subscription;
+  video = 1;
+  tiktok = new BehaviorSubject(1);
 
   constructor(){
-    //PERSON A
-    this.tiktok.pipe(
-      map(s => s.join('-')),
-      map(s => s + 'hola'),
-  
+    // PERSON A
+    this.personASub = this.tiktok.pipe(
+      filter(s => s%2 === 0)
     ).subscribe(v => {
       console.log('PERSON A VIDEO', v);
     });
-    //PERSON B
+    // PERSON B
     this.tiktok.pipe(
-      filter((v:any) => v[0]%2 ===1)
+      delay(4000)
     ).subscribe(v => {
-      console.log('PERSON A VIDEO', v);
+      console.log('PERSON B VIDEO', v);
     });
-    //PERSON C
+    // PERSON C
     this.tiktok.subscribe(v => {
-      console.log('PERSON A VIDEO', v);
+      console.log('PERSON C VIDEO', v);
     });
   }
+  onAddVideo(){
+    this.video ++
+    this.tiktok.next(this.video);    
+  }
 
-onAddVideo(){
-  this.tiktok =of([6,7,8,9,10])
-}
-
+  person1Unsubscribe(){
+     this.personASub.unsubscribe();
+     console.log('PERSON A SE DESUSCRIBE')
+  }
 
 
 printDataRicardoComp(event:any){
