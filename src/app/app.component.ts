@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {BehaviorSubject, of, Subscription} from 'rxjs';
 import { delay, filter, map } from 'rxjs/operators';
 
@@ -14,6 +14,13 @@ export class AppComponent {
   sw = true;
 
   color:string;
+
+  @Input() listOfNames=[{name:'Carlos', lastName: 'Gutierrez'},
+  {name: 'Juan', lastName: 'Ramirez'},
+  {name: 'Ricardo', lastName: 'Sandoval'},
+  {name: 'Carla', lastName: 'Valdez'},
+  {name: 'Alejandra', lastName: 'Lopez'},
+];
   personASub:Subscription;
   video = 1;
   tiktok = new BehaviorSubject(1);
