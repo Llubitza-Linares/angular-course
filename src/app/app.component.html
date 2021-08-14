@@ -109,3 +109,12 @@ my div with ng class
 <ul>
   <li *ngFor="let item of [1,2,3,4,5]; let i = index">{{item}}{{i}}</li>
 </ul>
+
+<ng-container *ngFor="let item of [1,2,3,4,5]; let i = index">
+  <ng-template #template2>
+  <ul><li [style.background]="'green'">{{item}}</li></ul>
+  </ng-template> 
+  <ul *ngIf="i%2 === 0; else template2">
+  <li [style.background]="'blue'">{{item}}</li>
+  </ul>
+<ng-container> 
