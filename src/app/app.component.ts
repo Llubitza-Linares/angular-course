@@ -58,7 +58,11 @@ printData(event){
   
 
 test(event){
-  console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAA', event);
+  console.log('AAA<zx<zAAAAAAAAAAAAAAAAAAAAAAAAA', event);
+}
+
+test100(event){
+  console.log('234234234234234', event);
 }
 
 }
