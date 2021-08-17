@@ -24,6 +24,8 @@ export class AppComponent {
 
   @ViewChild('myCompLlubitza') myCompLlubitza: any;
 
+  @ViewChild("myDiv3") myDiv3 = ElementRef;
+
   constructor(){
 
     // PERSON A
@@ -75,6 +77,10 @@ onShowLocalVars(){
   console.log(this.myDiv1, this.myDiv2, this.myCompLlubitza);
 
   this.myCompLlubitza.onClickTest();
+
+  this.myDiv1.nativeElement.style.backgroundColor ='green';
+console.log(this.myDiv1, this.myDiv2, this.myCompLlubitza);
+
 
   this.myDiv2.nativeElement.value = 'llubitza';
 }
