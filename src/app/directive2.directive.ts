@@ -15,8 +15,8 @@ export class Directive2Directive implements OnChanges {
   }
 
   ngOnChanges(changes:any){
-    console.log('changes: ', changes.ngIfRicardo.currentValue)
-    this.setViewContainer(changes.ngIfRicardo.currentValue);
+    console.log('changes: ', changes.ngIfLlubitza.currentValue)
+    this.setViewContainer(changes.ngIfLlubitza.currentValue);
     
   }
 
