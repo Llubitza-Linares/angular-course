@@ -1,10 +1,10 @@
-import { Component, Pipe, PipeTransform } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 
 @Component({
   selector: 'app-bitcoin',
   templateUrl: './bitcoin.component.html',
 })
-export class BitcoinComponent implements PipeTransform{
+export class BitcoinComponent implements OnInit {
 
   wallets = [
     { wallet: 'MARIA123', name: 'maria', eth: 0, btc: 2 },
@@ -87,14 +87,15 @@ export class BitcoinComponent implements PipeTransform{
       miner: 5}
   ];
 
-  transform(value: any, args?: any): any {
-    let newDate = new Date(value)
-    return '07/09/2020';
-  }
-
   contETH= this.wallets.reduce((acc,value) => acc+value.eth, 0)
 contBTC= this.wallets.reduce((acc,value) => acc+value.btc, 0) 
 
   constructor() {}
 
+  ngOnInit() {}
+
+  transaction() {
+  
+    
+  }
 }

@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,7 +23,7 @@ import { Test3Component } from './test3/test3.component';
     Test3Component,
     Directive1Directive,
     Directive2Directive,
-    BitcoinComponent
+    BitcoinComponent, 
   ],
   imports: [BrowserModule, FormsModule, Module1Module, HomeModule, BuyModule, AdminModule, CoreModule, LayoutModule],
   providers: [],
