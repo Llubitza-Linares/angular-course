@@ -1,6 +1,9 @@
+
+<p style="position: absolute; top: 10px; right: 10px">TOTAL BTC: {{contBTC}} TOTAL ETH: {{contETH}}</p>
+
+<p></p>
+
 <div>Wallets</div>
-
-
 
 <ng-container *ngFor="let person of wallets;">
   <div *ngIf="person.eth + person.btc > 10 else lower">
@@ -43,14 +46,13 @@
     <p> to: {{item.to}},
     <p> quantity: {{item.quantity}},
     <p> moneyType: {{item.moneyType |uppercase}},
-    <p> mineType: {{item.mineType}},
-    <p> miner: {{item.miner}}
-    <div *ngIf="item.miner > 20">
-      <button>
-        Mine
-      </button>
-    </div>
-  </div>
-</ng-template>
-
-</ng-container>
+    <p>MineType: {{mineType}}</p>
+    <p>Miner: {{miner}}</p>
+    <button *ngIf="mineType === 'PoS' else myVarElse" 
+            [disabled]="miner > 20">
+            mine
+    </button>
+    <ng-template #myVarElse>
+        <button >mine
+        </button>
+    </ng-template>
