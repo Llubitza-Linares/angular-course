@@ -1,4 +1,7 @@
 <div>Wallets</div>
+
+
+
 <ng-container *ngFor="let person of wallets;">
   <div *ngIf="person.eth + person.btc > 10 else lower">
     <div style="background-color:brown ">
@@ -26,26 +29,28 @@
       <p> from: {{item.from}},
       <p> to: {{item.to}},
       <p> quantity: {{item.quantity}},
-      <p> moneyType: {{item.moneyType}},
+      <p> moneyType: {{item.moneyType|uppercase}},
       <p> mineType: {{item.mineType}},
       <p> miner: {{item.miner}}
       <p> <button>Mine</button>
     </div>
   </div>
 
-    <div style="background-color:green ">
-      date: {{item.date}},
-      <p> from: {{item.from}},
-      <p> to: {{item.to}},
-      <p> quantity: {{item.quantity}},
-      <p> moneyType: {{item.moneyType}},
-      <p> mineType: {{item.mineType}},
-      <p> miner: {{item.miner}}
-      <p>
-      <div *ngIf="item.miner > 20">
-        <button>
-          Mine
-        </button>
-      </div>
+  <ng-template #type>
+  <div style="background-color:green ">
+    date: {{item.date}},
+    <p> from: {{item.from}},
+    <p> to: {{item.to}},
+    <p> quantity: {{item.quantity}},
+    <p> moneyType: {{item.moneyType |uppercase}},
+    <p> mineType: {{item.mineType}},
+    <p> miner: {{item.miner}}
+    <div *ngIf="item.miner > 20">
+      <button>
+        Mine
+      </button>
     </div>
+  </div>
+</ng-template>
+
 </ng-container>
