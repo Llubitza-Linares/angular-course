@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { BitcoinComponent } from './bitcoin/bitcoin.component';
 import { CoreModule } from './core/core.module';
 import { Directive1Directive } from './directive1.directive';
 import { Directive2Directive } from './directive2.directive';
@@ -20,7 +21,8 @@ import { Test3Component } from './test3/test3.component';
     Test2Component,
     Test3Component,
     Directive1Directive,
-    Directive2Directive
+    Directive2Directive,
+    BitcoinComponent
   ],
   imports: [BrowserModule, FormsModule, Module1Module, HomeModule, BuyModule, AdminModule, CoreModule, LayoutModule],
   providers: [],
