@@ -1,13 +1,16 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { BehaviorSubject, of, Subscription } from 'rxjs';
+import {BehaviorSubject, of, Subscription} from 'rxjs';
 import { filter, map, delay } from 'rxjs/operators';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
+
+  data = [1,2,3,4,5,6,7,8,9];
+
   constructor() {
     this.pure(2, 3);
     this.pure(10, 2);

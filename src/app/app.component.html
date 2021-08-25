@@ -1,9 +1,7 @@
-<p> APP</p>
+<p>APP</p>
 
-<app-admin1> </app-admin1>
 
-<p> Task 2</p>
-<header></header>
+<p>PURE: {{ data | pure }}</p>
+<p>IMPURE: {{ data | impure }}</p>
 
-<p> Test</p>
-
+<button (click)="data.push(10)">add</button> 
