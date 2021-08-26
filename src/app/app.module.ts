@@ -3,10 +3,14 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './adminc/admin/admin.component';
+import { Admin1cComponent } from './adminc/admin1c/admin1c.component';
+import { Admin2cComponent } from './adminc/admin2c/admin2c.component';
 import { AppComponent } from './app.component';
 import { Directive1Directive } from './directive1.directive';
 import { Directive2Directive } from './directive2.directive';
 import { HomeComponent } from './homec/home/home.component';
+import { Home1cComponent } from './homec/home1c/home1c.component';
+import { Home2cComponent } from './homec/home2c/home2c.component';
 import { AdminModule } from './pages/admin/admin.module';
 import { Admin1Component } from './pages/admin/admin1/admin1.component';
 import { Admin2Component } from './pages/admin/admin2/admin2.component';
@@ -90,10 +94,10 @@ const routes: Routes = [
     View2Component,
     View1sub1Component,
     View1sub2Component,HomeComponent,
-    Home1Component,
-    Home2Component,AdminComponent,
-    Admin1Component,
-    Admin2Component
+    Home1cComponent,
+    Home2cComponent, AdminComponent,
+    Admin1cComponent,
+    Admin2cComponent
   ],
   imports: [
     BrowserModule,
