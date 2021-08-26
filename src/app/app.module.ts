@@ -2,12 +2,18 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './adminc/admin/admin.component';
 import { AppComponent } from './app.component';
 import { Directive1Directive } from './directive1.directive';
 import { Directive2Directive } from './directive2.directive';
+import { HomeComponent } from './homec/home/home.component';
 import { AdminModule } from './pages/admin/admin.module';
+import { Admin1Component } from './pages/admin/admin1/admin1.component';
+import { Admin2Component } from './pages/admin/admin2/admin2.component';
 import { BuyModule } from './pages/buy/buy.module';
 import { HomeModule } from './pages/home/home.module';
+import { Home1Component } from './pages/home/home1/home1.component';
+import { Home2Component } from './pages/home/home2/home2.component';
 import { SharedModule } from './shared/shared.module';
 import { Test1Component } from './test1/test1.component';
 import { Test2Component } from './test2/test2.component';
@@ -41,8 +47,36 @@ const routes: Routes = [
   },
   {
     path: 'view3', loadChildren: () => import('./view3/view3.module').then(m => m.View3Module)
+  },
+  {
+    path: 'home', component: HomeComponent,
+    children: [
+      {
+        path: '', redirectTo: 'home1', pathMatch: 'full'
+      },
+      {
+        path: 'home1', component: Home1Component,
+      },
+      {
+        path: 'home2', component: Home2Component,
+      }
+    ]
+  },
+  {
+    path: 'admin', component: AdminComponent,
+    children: [
+      {
+        path: '', redirectTo: 'admin1', pathMatch: 'full'
+      },
+      {
+        path: 'admin1', component: Admin1Component,
+      },
+      {
+        path: 'admin2', component: Admin2Component,
+      }
+    ]
   }
-];
+  ];
 
 @NgModule({
   declarations: [
@@ -55,7 +89,11 @@ const routes: Routes = [
     View1Component,
     View2Component,
     View1sub1Component,
-    View1sub2Component
+    View1sub2Component,HomeComponent,
+    Home1Component,
+    Home2Component,AdminComponent,
+    Admin1Component,
+    Admin2Component
   ],
   imports: [
     BrowserModule,
