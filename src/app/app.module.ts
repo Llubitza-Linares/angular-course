@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './adminc/admin/admin.component';
-import { Admin1cComponent } from './adminc/admin1c/admin1c.component';
-import { Admin2cComponent } from './adminc/admin2c/admin2c.component';
+import { AdminComponent } from './admin1/adminc/admin/admin.component';
+import { Admin1cComponent } from './admin1/adminc/admin1c/admin1c.component';
+import { Admin2cComponent } from './admin1/adminc/admin2c/admin2c.component';
 import { AppComponent } from './app.component';
 import { Directive1Directive } from './directive1.directive';
 import { Directive2Directive } from './directive2.directive';
@@ -12,8 +12,7 @@ import { HomeComponent } from './homec/home/home.component';
 import { Home1cComponent } from './homec/home1c/home1c.component';
 import { Home2cComponent } from './homec/home2c/home2c.component';
 import { AdminModule } from './pages/admin/admin.module';
-import { Admin1Component } from './pages/admin/admin1/admin1.component';
-import { Admin2Component } from './pages/admin/admin2/admin2.component';
+
 import { BuyModule } from './pages/buy/buy.module';
 import { HomeModule } from './pages/home/home.module';
 import { Home1Component } from './pages/home/home1/home1.component';
@@ -72,12 +71,7 @@ const routes: Routes = [
       {
         path: '', redirectTo: 'admin1', pathMatch: 'full'
       },
-      {
-        path: 'admin1', component: Admin1Component,
-      },
-      {
-        path: 'admin2', component: Admin2Component,
-      }
+  
     ]
   }
   ];
@@ -96,8 +90,6 @@ const routes: Routes = [
     View1sub2Component,HomeComponent,
     Home1cComponent,
     Home2cComponent, AdminComponent,
-    Admin1cComponent,
-    Admin2cComponent
   ],
   imports: [
     BrowserModule,

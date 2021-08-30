@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home2c',
-  templateUrl: './home2c.component.html',
+  template:`<p>h0me2 works!<p> <router-outlet></router-outlet>`,
   styleUrls: ['./home2c.component.css']
 })
 export class Home2cComponent implements OnInit {
