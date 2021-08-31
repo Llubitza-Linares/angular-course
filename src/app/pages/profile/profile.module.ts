@@ -5,14 +5,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes=[
   {path: '', component: ProfileComponent}
-]
+];
+
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
-    ProfileComponent
+    ProfileComponent,
+
   ]
 })
-export class ProfileModule { }
+export class ProfileModule { } 
