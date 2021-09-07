@@ -33,13 +33,9 @@ style="font-family: sans-serif; font-size: 100%; background-color:SkyBlue">-----
 
   <app-transaction [data]="transaction">
 
-  <button
-  [disabled]="transaction.mineType === 'PoS' &&
-  transaction.miner < 20"
+  <button [disabled]="transaction.mineType === 'PoS' && transaction.miner < 20" 
   
-  (click)="mine(transaction, i)">
-  mine
-  </button>
+  (click)="mine(transaction, transaction.id)"> Mine</button>
   </app-transaction>
   
   </div>
