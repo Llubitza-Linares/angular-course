@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.scss']
 })
+
 export class ProfileComponent implements OnInit {
 
   constructor() { }
@@ -12,4 +12,4 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
   }
 
-}
+} 
