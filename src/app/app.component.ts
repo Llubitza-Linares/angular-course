@@ -10,8 +10,8 @@ import { WalletsService } from './services/wallets.service';
 export class AppComponent {
   title = 'test';
 
-  wallets:any[]= [];
-  transactions:any[] = [];
+  wallets= [];
+  transactions = [];
   walletSubscription: Subscription;
   transactionsSubscription: Subscription;
 
@@ -46,4 +46,19 @@ export class AppComponent {
   }
 
   mine() {}
+
+  totalCoin(t: string) {
+    return this.wallets.reduce(
+      (acc, value) => acc + (value[t] > 0 ? value[t] : 0),
+      0
+    );
+  }
+
+  transactionStatus(): boolean {
+    const tr = this.transactions.filter(
+      t => t.mineType === 'PoS' && t.miner < 20
+    );
+
+    return this.transactions.length === tr.length;
+  }
 }

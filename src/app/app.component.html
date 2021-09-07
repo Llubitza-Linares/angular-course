@@ -3,6 +3,17 @@
 </div>
 
 
+<div style="position:fixed; right:10px; top:2px; background-color:SkyBlue;">
+Total ETH: {{totalCoin('eth')}}
+TOTAL BTC: {{totalCoin('btc')}}
+</div>
+
+<div *ngIf="transactionStatus()">
+<h2>
+THERE ARE NOT TRANSACTIONS
+</h2>
+</div>
+
 
 <div style="background-color:SkyBlue">---------------WALLETS-----------------------</div>
 
@@ -13,7 +24,9 @@
   </app-wallet>
 </div>
 </div>
-<div style="background-color:SkyBlue">---------------TRANSACTIONS-----------------------</div>
+<div 
+
+style="background-color:SkyBlue">---------------TRANSACTIONS-----------------------</div>
 
 <div style="display: flex; flex-direction: row;">
   <div *ngFor="let transaction of transactions; let i = index;">
@@ -30,4 +43,3 @@
   
   </div>
   </div>
-  
