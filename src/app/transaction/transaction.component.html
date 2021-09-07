@@ -1,0 +1,15 @@
+<div style="border: 1px solid red;"
+    [style.background]="data.mineType === 'PoW' ? 'yellow' : 'green'">
+  <br>date: {{data.date | date: 'dd/MM/yyyy'}}
+  <br>from: {{data.from}}
+  <br>to: {{data.to}}
+  <br>quantity: {{data.quantity}}
+  <br>moneyType: {{data.moneyType | uppercase}}
+  <br>mineType: {{data.mineType}}
+  <br>miner: {{data.miner}}
+
+  <ng-content>
+
+  </ng-content>
+
+</div>

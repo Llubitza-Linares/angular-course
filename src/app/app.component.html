@@ -1,0 +1,33 @@
+<div style="background-color:SkyBlue">
+<p>2- BITCOIN - ETHEREUM</p>
+</div>
+
+
+
+<div style="background-color:SkyBlue">---------------WALLETS-----------------------</div>
+
+
+<div style="display: flex; flex-direction: row">
+<div *ngFor="let wallet of wallets">
+  <app-wallet [data]="wallet">
+  </app-wallet>
+</div>
+</div>
+<div style="background-color:SkyBlue">---------------TRANSACTIONS-----------------------</div>
+
+<div style="display: flex; flex-direction: row;">
+  <div *ngFor="let transaction of transactions; let i = index;">
+
+  <app-transaction [data]="transaction">
+
+  <button
+  [disabled]="transaction.mineType === 'PoS' &&
+  transaction.miner < 20"
+  (click)="onMine(transaction, i)">
+  mine
+  </button>
+  </app-transaction>
+  
+  </div>
+  </div>
+  
