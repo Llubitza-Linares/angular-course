@@ -36,6 +36,7 @@ style="background-color:SkyBlue">---------------TRANSACTIONS--------------------
   <button
   [disabled]="transaction.mineType === 'PoS' &&
   transaction.miner < 20"
+  
   (click)="onMine(transaction, i)">
   mine
   </button>
