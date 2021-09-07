@@ -1,5 +1,10 @@
 <div style="border: 1px solid red;"
-    [style.background]="data.mineType === 'PoW' ? 'yellow' : 'green'">
+[style.background]="mineType === 'PoW'? 'yellow' : 'forestGreen'"
+style="float: left; 
+margin: 10px; 
+padding: 10px;
+font-family: sans-serif;
+font-size: 110%">
   <br>date: {{data.date | date: 'dd/MM/yyyy'}}
   <br>from: {{data.from}}
   <br>to: {{data.to}}

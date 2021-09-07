@@ -1,5 +1,12 @@
 <div style="border: 1px solid green;"
-  [style.background]="(data.eth + data.btc) > 5 ? 'brown' : ((data.eth + data.btc) < 2 ? 'gray' : '')">
+  [style.background]="(data.eth + data.btc) > 5 ? 'brown' : ((data.eth + data.btc) < 2 ? 'gray' : '')"
+  style="float: left; 
+  margin: 10px; 
+  padding: 10px;
+  font-family: sans-serif;
+  font-size: 110%">
+
+  
   <br>Wallet: {{data.wallet}}
   <br>Name: {{data.name}}
   <br>ETH: {{data.eth}}
