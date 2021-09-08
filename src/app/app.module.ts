@@ -1,30 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
 import {RouterModule, Routes} from "@angular/router";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import { HttpClientModule } from '@angular/common/http';
-
+import { AppComponent } from './app.component';
+import { ProviderComponent } from './provider/provider.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
-  {path: 'login', loadChildren:
-      () => import('./login/login.module').then(m => m.LoginModule)},
-  {path: 'pages', loadChildren:
-      () => import('./pages/pages.module').then(m => m.PagesModule)}
+  {
+    path: 'provider', component: ProviderComponent
+  },
+  {
+    path: 'product', loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
+  },
+  {
+    path: 'client', loadChildren: () => import('./client/client.module').then(m => m.ClientModule)
+  }
 ];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, 
+    ProviderComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
-    HttpClientModule
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
