@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {environment} from "../../../../environments/environment";
+import {Observable} from "rxjs";
 
-@Component({
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
-})
-export class HomeComponent implements OnInit {
+@Injectable()
+export class PublicationService {
 
-  constructor() { }
+  private url = environment.app.apiBaseUrl;
 
-  ngOnInit(): void {
-  }
+  constructor(private http: HttpClient) { }
 
-  onShowMessage():void{
+  getAll(): Observable<any>{
+    return this.http.get(`${this.url}/publications.json`)
   }
 
 }
