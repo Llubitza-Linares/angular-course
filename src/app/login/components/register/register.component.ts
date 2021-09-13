@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../../services/auth.service";
+
 import {MatDialogRef} from "@angular/material/dialog";
+import { AuthService } from '../../../core/sevices/auth.service';
 
 @Component({
   selector: 'app-register',
