@@ -1,0 +1,8 @@
+<form #formTemplate="ngForm"
+      (ngSubmit)="onSubmitTemplate(formTemplate)">
+  <input type="text" name="Name" ngModel placeholder="Name">
+  <input type="text" name="Age" ngModel>
+  <input type="text" name="Disease" ngModel>
+  <input type="text" name="VaccineType" ngModel>
+  <button type="submit">submit</button>
+</form> 
