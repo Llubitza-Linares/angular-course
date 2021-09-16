@@ -15,8 +15,8 @@ export class PostMessageComponent implements OnInit {
   constructor(private authService: AuthService,
               private publicationService: PublicationService,
               private homeService: HomeService,
-              public dialogRef: MatDialogRef<PostMessageComponent>,
-              private profileService:ProfileService) { }
+              public dialogRef: MatDialogRef<PostMessageComponent>
+              , private profileService:ProfileService) { }
 
   ngOnInit(): void {
   }
@@ -27,9 +27,9 @@ export class PostMessageComponent implements OnInit {
       ...form.value,
       idUser: this.authService.getUserId()
     }).subscribe( res => {
-      this.homeService.setLoad(true);
-      this.profileService.setLoad(true);
-      this.dialogRef.close();
+        this.homeService.setLoad(true);
+        this.profileService.setLoad(true);
+        this.dialogRef.close();
     })
 
   }

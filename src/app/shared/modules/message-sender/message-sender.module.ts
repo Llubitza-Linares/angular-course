@@ -22,7 +22,8 @@ import { PostMessageComponent } from './components/post-message/post-message.com
   ],
   providers: [
     PublicationService
-  ]
+  ],
+  entryComponents: [PostMessageComponent],
 })
 
 export class MessageSenderModule {
