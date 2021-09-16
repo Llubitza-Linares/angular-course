@@ -1,0 +1,49 @@
+<div style="font-family: sans-serif; font-size: 150%; background-color:SkyBlue">
+<p>1 - VACUNAS</p>
+</div>
+
+<div *ngIf="!checkAllVac()">EVERYBODY VACCINATED</div>
+
+<div style="font-family: sans-serif; font-size: 100%;background-color:SkyBlue">VACCINATED = {{numVac}}</div>
+
+<div style="display: flex; flex-direction: row">
+
+<div *ngFor="let person of vac">
+
+  <person 
+  [id]="person[0]" 
+  [name] = "person[1]['name']" 
+  [age]="person[1]['name']"  
+  [date]= "person[1]['date']"
+  [disease]= "person[1]['disease']" 
+  [vaccineType]= "person[1]['vaccineType']" 
+  [vaccined]= "person[1]['vaccined']" 
+  [doses]= "person[1]['doses']">
+
+  </person>
+</div>
+</div>
+
+<div style="font-family: sans-serif; font-size: 100%; background-color:SkyBlue">NOT VACCINATED = {{numUnvac}}</div>
+
+<div style="display: flex; flex-direction: row">
+<div *ngFor="let person of unvac">
+  <person 
+  [id]="person[0]" 
+  [name] = "person[1]['name']" 
+  [age]="person[1]['age']"  
+  [date]= "person[1]['date']"
+  [disease]= "person[1]['disease']" 
+  [vaccineType]= "person[1]['vaccineType']" 
+  [vaccined]= "person[1]['vaccined']" 
+  [doses]= "person[1]['doses']">
+
+  <button
+  [disabled]="person[1]['disease'] === true ||
+  person[1]['age'] < 12" (click)="Vaccinate(person[0],person[1]['name'],person[1]['age'],person[1]['date'],person[1]['disease'],person[1]['vaccined'],person[1]['doses'], person[1]['vaccineType'])"
+>
+  Vaccinate
+</button>
+  </person>
+</div>
+</div>
