@@ -10,14 +10,14 @@ import { Component, Input, OnInit } from '@angular/core';
   font-family: sans-serif;
   font-size: 110%">
   
-  <p>Name: {{name|titlecase }}</p>
+  <p>Name: {{name | titlecase}}</p>
   <p>Age: {{age}}</p>
   <p>Date: {{date|date: 'yyyy/MM/dd'}}</p>
-  <p *ngIf=!vaccined>Disease: {{disease | bytn}}<p>
-  <p *ngIf=!vaccined > Vaccine Type: {{vaccineType}}<p>
+  <p >Disease: {{disease | bytn}}<p>
+  <p > Vaccine Type: {{vaccineType}}<p>
   <p *ngIf=vaccined> Vaccined: Yes</p>
   <p *ngIf=!vaccined> Vaccined: No</p>
-  <p *ngIf=!vaccined > Doses: {{doses}}<p>
+  <p > Doses: {{doses}}<p>
   <ng-content></ng-content>
   </div>
   `
