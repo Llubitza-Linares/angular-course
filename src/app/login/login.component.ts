@@ -12,23 +12,30 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  formReactive: FormGroup;
-
-  constructor(private formBuilder:FormBuilder) {
-
-    this.formReactive = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
-      lastName: ['', [Validators.required]]
-    });
-
+  constructor(private authService: AuthService,
+              private matDialog: MatDialog,
+              private router: Router) {
   }
 
   ngOnInit(): void {
+    if(this.authService.verifyLogged()){
+      this.router.navigate(['pages']);
+    }
   }
 
-  getValue(value:string){
-    return this.formReactive.get(value);
+  login(form:any){
+    this.authService.login({
+      email: form.value.email,
+      password: form.value.password,
+      returnSecureToken: true
+    }).subscribe(res => {
+      console.log('RESPONSE', res);
+      this.router.navigate(['pages']);
+    });
   }
 
+  onCreateNewAccount(){
+    this.matDialog.open(RegisterComponent)
+  }
 
 }
