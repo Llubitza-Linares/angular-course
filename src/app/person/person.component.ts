@@ -10,7 +10,7 @@ import { Component, Input, OnInit } from '@angular/core';
   font-family: sans-serif;
   font-size: 110%">
   
-  <p>Name: {{name }}</p>
+  <p>Name: {{name|titlecase }}</p>
   <p>Age: {{age}}</p>
   <p>Date: {{date|date: 'yyyy/MM/dd'}}</p>
   <p *ngIf=!vaccined>Disease: {{disease | bytn}}<p>
