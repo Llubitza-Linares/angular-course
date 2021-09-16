@@ -9,6 +9,8 @@ import { HomeService } from './home.service';
 })
 export class HomeComponent implements OnInit {
 
+  posts:any[] = [];
+
   constructor(private publicationService: PublicationService,
               private homeService: HomeService) { }
 
@@ -18,7 +20,7 @@ export class HomeComponent implements OnInit {
       .subscribe(s => this.loadData())
 
 
-this.loadData();
+    this.loadData();
   }
 
   onShowMessage():void{
@@ -28,7 +30,8 @@ this.loadData();
   loadData(){
     this.publicationService.getAll().subscribe(res => {
 
-      console.log('RES PUBLICATIONS', res);
+      this.posts = Object.entries(res).map((s: any) => ({id: s[0], ...s[1]}));
+      console.log(res);
 
     })
   }

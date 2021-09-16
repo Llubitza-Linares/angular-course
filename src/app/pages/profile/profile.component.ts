@@ -3,6 +3,8 @@ import {PublicationService} from "../shared/services/publication.service";
 
 import {MatDialog} from "@angular/material/dialog";
 import { AuthService } from '../../core/sevices/auth.service';
+import { ProfileService } from './profile.service';
+import { filter } from 'rxjs/operators';
 
 @Component({
   templateUrl: './profile.component.html',
@@ -10,22 +12,27 @@ import { AuthService } from '../../core/sevices/auth.service';
 })
 export class ProfileComponent implements OnInit {
 
+  posts:any [] = []
+
   constructor(private publicationService: PublicationService,
               private matDialog: MatDialog,
-              private authService: AuthService) { }
+              private authService: AuthService,
+              private profileService:ProfileService) { }
 
   ngOnInit(): void {
+    this.profileService.currentLoad().pipe(filter(s => s===true)).subscribe(s => this.loadData())
+    this.loadData()
+  }
 
+  loadData(){
     const id = this.authService.getUserId();
-    console.log('ID', id)
-    if(id) {
-      this.publicationService.getAllById(id).subscribe(
-        res => {
-          console.log('PROFILE: ', res);
+    if(id){
+      this.publicationService.getAllById(id).subscribe( res =>{
+          this.posts = Object.entries(res).map((s: any) => ({id: s[0],...s[1]}))
+          console.log(this.posts)
         }
       )
     }
-
   }
 
 }

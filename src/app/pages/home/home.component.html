@@ -4,6 +4,7 @@
 <app-sidebar class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2">
 </app-sidebar>
 
+
 <div class="feed col-12 col-sm-12 col-md-6 col-lg-8 col-xl-8">
   <div class="storyReel">
 
@@ -15,8 +16,8 @@
 
   <app-message-sender></app-message-sender>
 
-  <ng-container *ngFor="let post of [1,2,3,4]">
-    <app-post></app-post>
+  <ng-container *ngFor="let post of posts">
+    <app-post [data]="post"></app-post>
   </ng-container>
 </div>
 

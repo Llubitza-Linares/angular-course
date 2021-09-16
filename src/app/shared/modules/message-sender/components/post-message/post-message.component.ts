@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { AuthService } from '../../../../../core/sevices/auth.service';
 import { HomeService } from '../../../../../pages/home/home.service';
+import { ProfileService } from '../../../../../pages/profile/profile.service';
 import { PublicationService } from '../../../../../pages/shared/services/publication.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class PostMessageComponent implements OnInit {
   constructor(private authService: AuthService,
               private publicationService: PublicationService,
               private homeService: HomeService,
-              public dialogRef: MatDialogRef<PostMessageComponent>) { }
+              public dialogRef: MatDialogRef<PostMessageComponent>,
+              private profileService:ProfileService) { }
 
   ngOnInit(): void {
   }
@@ -25,7 +27,9 @@ export class PostMessageComponent implements OnInit {
       ...form.value,
       idUser: this.authService.getUserId()
     }).subscribe( res => {
-        this.homeService.setLoad(true);
+      this.homeService.setLoad(true);
+      this.profileService.setLoad(true);
+      this.dialogRef.close();
     })
 
   }
