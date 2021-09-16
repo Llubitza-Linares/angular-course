@@ -7,7 +7,7 @@ import { PublicationService } from '../../../../../pages/shared/services/publica
 @Component({
   selector: 'app-register',
   templateUrl: './post-message.component.html',
-  styleUrls: ['./post-message.component.scss']
+  styleUrls: ['./post-message.component.css']
 })
 export class PostMessageComponent implements OnInit {
 
