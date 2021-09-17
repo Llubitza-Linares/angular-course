@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { CommsService } from '../../app/comms.service';
+
 
 @Component({
   selector: 'formus',
@@ -7,15 +10,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
+  @Input() mode = 'Create';
 
-  constructor() {
+
+  data:any[] =[]
+
+  from:string='';
+  to:string='';
+  quantity:string='';
+  moneyType:string='';
+  mineType:string='';
+  miner:string='';
+
+  constructor( private comm:CommsService) {
 
   }
 
   ngOnInit() {
+    this.comm.info.subscribe(value => {
+      this.data = value
+      console.log(this.data)
+  })
+  this.comm.mode.subscribe(value => {
+    this.mode = value
+    console.log(this.mode)
+})
   }
+  onSubmitTemplate(f:NgForm){
+    if(this.mode === "Create"){
+      console.log(f.value)
+      console.log(f.value.to)
+    }else{
 
-  onSubmitTemplate(values:any){
-    console.log('VALUES: ', values)
+    }
   }
 } 

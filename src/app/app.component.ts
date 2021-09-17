@@ -75,4 +75,6 @@ export class AppComponent {
     this.numVac=this.vac.length
     this.numUnvac=this.unvac.length
   }
+
+ 
 }

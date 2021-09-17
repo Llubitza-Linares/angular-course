@@ -27,6 +27,7 @@
 <div style="font-family: sans-serif; font-size: 100%; background-color:SkyBlue">NOT VACCINATED = {{numUnvac}}</div>
 
 <div style="display: flex; flex-direction: row">
+
 <div *ngFor="let person of unvac">
   <person 
   [id]="person[0]" 
@@ -45,8 +46,8 @@
   Vaccinate
 </button>
 
-<button (click)="Edit" >Edit
-</button>
+<button mat-button (click)="onEdit()">Edit</button>
+
   </person>
 </div>
 </div>

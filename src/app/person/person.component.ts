@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'person',
@@ -40,10 +40,16 @@ vaccineType!: string;
 vaccined!: number;
   @Input()
 doses!: number;
+
+@Output() edit = new EventEmitter();
   
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onEdit() {
+    this.edit.emit();
   }
 
 }

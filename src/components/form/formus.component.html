@@ -1,8 +1,10 @@
-<form #formTemplate="ngForm"
-      (ngSubmit)="onSubmitTemplate(formTemplate)">
-  <input type="text" name="Name" ngModel placeholder="Name">
-  <input type="text" name="Age" ngModel>
-  <input type="text" name="Disease" ngModel>
-  <input type="text" name="VaccineType" ngModel>
-  <button type="submit">submit</button>
-</form> 
+<p>Mode: {{ mode }}</p>
+
+<form #formTemplate="ngForm" (ngSubmit)="onSubmitTemplate(formTemplate)">
+<input type="text" name="name" ngModel placeholder="name" />
+<input type="text" name="age" ngModel placeholder="age" />
+<input type="text" name="disease" ngModel placeholder="disease" />
+<input type="text" name="vaccineType" ngModel placeholder="vaccineType" />
+<button type="submit">submit</button>
+
+</form>
